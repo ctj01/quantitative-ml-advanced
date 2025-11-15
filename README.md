@@ -2,9 +2,63 @@
 
 A comprehensive repository covering advanced quantitative machine learning techniques for financial markets, with focus on time series analysis, regime detection, deep learning architectures, and portfolio optimization.
 
+## 🎯 What Makes This Repository Special
+
+- **Deep Mathematical Foundations**: Step-by-step derivations with geometric intuition
+- **Production-Ready Code**: 2,500+ lines of documented, tested implementations
+- **Complete Trading Systems**: Fully integrated systems combining volatility forecasting, technical analysis, and ML
+- **20+ Exercises**: From beginner to expert level with detailed solutions
+- **Real-World Focus**: Integration with RSI, W/M patterns, divergences, and candlestick patterns
+
+## 🚀 Quick Start
+
+**Get started in 10 minutes**:
+
+```python
+# 1. Load data
+from src.data.loaders import load_financial_data
+data = load_financial_data('BTC-USD', period='1y')
+
+# 2. Fit volatility model
+from src.models.garch import GARCHModel
+model = GARCHModel(p=1, q=1).fit(data['returns'] * 100)
+
+# 3. Forecast volatility
+vol_forecast = model.forecast(horizon=10)
+print("Next 10 days volatility:", vol_forecast)
+
+# 4. Run complete trading system
+from notebooks.08_projects.volatility_trading_system import VolatilityTradingSystem
+system = VolatilityTradingSystem(symbol='BTC-USD')
+results = system.run_full_analysis()
+```
+
+📖 **Full guide**: See `docs/00_quick_start.md`
+
 ## Overview
 
 This repository provides a complete learning path from advanced time series modeling to production-ready quantitative strategies. Each module contains rigorous mathematical theory, practical implementations, solved examples, and exercises.
+
+## 📦 What's Included
+
+### 📚 Documentation (3,500+ lines)
+- **Quick Start Guide** - Get running in 10 minutes
+- **Mathematical Foundations** - Deep dives into GARCH, HMM, optimization
+- **Trading Integration** - Combine ML with RSI, patterns, divergences
+- **Exercises** - 20+ challenges with solutions
+
+### 💻 Production Code (2,500+ lines)
+- **GARCH Models** - ARCH, GARCH(p,q), EGARCH with MLE estimation
+- **Data Loaders** - Yahoo Finance integration, cleaning, preprocessing
+- **Technical Indicators** - RSI, MACD, BB, ATR, divergences, W/M patterns
+- **Trading System** - Complete backtesting framework
+
+### 🎓 Mini-Project
+- **Volatility Trading System** - Integrates everything you learn
+  - Multi-signal generation
+  - Regime detection
+  - Risk management
+  - Performance analysis
 
 ## Prerequisites
 
